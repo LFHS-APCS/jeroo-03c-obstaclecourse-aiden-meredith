@@ -38,11 +38,17 @@ public class Jeroo extends JerooBase {
       while (!isFlower(AHEAD)){
         hop();
       }
-      hop();
-      if(isNet(AHEAD)){
+      while (isFlower(AHEAD)){
+        hop();
+        pick();
+      }
+      if (isNet(AHEAD)){
         turn(RIGHT);
       } else {
         turn(LEFT);
+      }
+      while (!isWater(AHEAD)){
+        hop();
       }
     }
 
